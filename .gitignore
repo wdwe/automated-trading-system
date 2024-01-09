@@ -53,3 +53,8 @@ _deps
 *.exe
 *.out
 *.app
+
+###########
+# exception
+###########
+!/tws/client/lib/libbid.a
