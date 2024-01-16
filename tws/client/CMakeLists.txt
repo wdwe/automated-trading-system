@@ -23,6 +23,9 @@ add_library(tws STATIC
 )
 
 target_link_directories(tws PUBLIC ./lib)
+#set(THREADS_PREFER_PTHREAD_FLAG ON) # for pthread
+find_package(Threads) # for pthread, but it seems to compile fine w/o these two lines
 target_link_libraries(tws
         PUBLIC bid
+        PUBLIC Threads::Threads
 )
