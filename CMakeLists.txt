@@ -20,4 +20,5 @@ target_include_directories(${PROJECT_NAME}
 
 add_subdirectory(lib)
 add_subdirectory(tws/client)
+add_subdirectory(tws/utils)
 add_subdirectory(tests)

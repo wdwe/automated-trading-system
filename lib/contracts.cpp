@@ -18,3 +18,12 @@ Contract TSEJStockContracts::get_hsbc() {
     contract.exchange = "LSE";
     return contract;
 }
+
+Contract TSEJStockContracts::get_xiaomi() {
+    Contract contract;
+    contract.symbol = "1810";
+    contract.secType = "STK";
+    contract.currency = "HKD";
+    contract.exchange = "SEHK";
+    return contract;
+}
