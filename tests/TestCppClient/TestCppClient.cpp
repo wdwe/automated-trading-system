@@ -392,83 +392,83 @@ void TestCppClient::tickDataOperation()
 	/*** Requesting real time market data ***/
     std::this_thread::sleep_for(std::chrono::seconds(1));
     //! [reqmktdata]
-	m_pClient->reqMktData(1001, ContractSamples::StockComboContract(), "", false, false, TagValueListSPtr());
-	m_pClient->reqMktData(1002, ContractSamples::OptionWithLocalSymbol(), "", false, false, TagValueListSPtr());
-	//! [reqmktdata]
-	//! [reqmktdata_snapshot]
-	m_pClient->reqMktData(1003, ContractSamples::FutureComboContract(), "", true, false, TagValueListSPtr());
-	//! [reqmktdata_snapshot]
-
-	/*
-	//! [regulatorysnapshot]
-	// Each regulatory snapshot incurs a fee of 0.01 USD
-	m_pClient->reqMktData(1013, ContractSamples::USStock(), "", false, true, TagValueListSPtr());
-	//! [regulatorysnapshot]
-	*/
-	
-	//! [reqmktdata_genticks]
-	//Requesting RTVolume (Time & Sales) and shortable generic ticks
-	m_pClient->reqMktData(1004, ContractSamples::USStockAtSmart(), "233,236", false, false, TagValueListSPtr());
-	//! [reqmktdata_genticks]
-
-	//! [reqmktdata_contractnews]
-	// Without the API news subscription this will generate an "invalid tick type" error
-	m_pClient->reqMktData(1005, ContractSamples::USStock(), "mdoff,292:BZ", false, false, TagValueListSPtr());
-	m_pClient->reqMktData(1006, ContractSamples::USStock(), "mdoff,292:BT", false, false, TagValueListSPtr());
-	m_pClient->reqMktData(1007, ContractSamples::USStock(), "mdoff,292:FLY", false, false, TagValueListSPtr());
-	m_pClient->reqMktData(1008, ContractSamples::USStock(), "mdoff,292:DJ-RT", false, false, TagValueListSPtr());
-	//! [reqmktdata_contractnews]
-	//! [reqmktdata_broadtapenews]
-	m_pClient->reqMktData(1009, ContractSamples::BTbroadtapeNewsFeed(), "mdoff,292", false, false, TagValueListSPtr());
-	m_pClient->reqMktData(1010, ContractSamples::BZbroadtapeNewsFeed(), "mdoff,292", false, false, TagValueListSPtr());
-	m_pClient->reqMktData(1011, ContractSamples::FLYbroadtapeNewsFeed(), "mdoff,292", false, false, TagValueListSPtr());
-	//! [reqmktdata_broadtapenews]
-
-	//! [reqoptiondatagenticks]
-	//Requesting data for an option contract will return the greek values
-	m_pClient->reqMktData(1013, ContractSamples::USOptionContract(), "", false, false, TagValueListSPtr());
-	//! [reqoptiondatagenticks]
-	
-	//! [reqfuturesopeninterest]
-	//Requesting data for a futures contract will return the futures open interest
-	m_pClient->reqMktData(1014, ContractSamples::SimpleFuture(), "mdoff,588", false, false, TagValueListSPtr());
-	//! [reqfuturesopeninterest]
-
-	//! [reqpreopenbidask]
-	//Requesting data for a futures contract will return the pre-open bid/ask flag
-	m_pClient->reqMktData(1015, ContractSamples::SimpleFuture(), "", false, false, TagValueListSPtr());
-	//! [reqpreopenbidask]
-
-	//! [reqavgoptvolume]
-	//Requesting data for a stock will return the average option volume
-	m_pClient->reqMktData(1016, ContractSamples::USStockAtSmart(), "mdoff,105", false, false, TagValueListSPtr());
-	//! [reqavgoptvolume]
-
-	//! [reqetfticks]
-	//Requesting data for an ETF will return the ETF ticks
-	m_pClient->reqMktData(1017, ContractSamples::etf(), "mdoff,576,577,578,614,623", false, false, TagValueListSPtr());
-	//! [reqetfticks]
-
-	//! [reqmktdatacrypto]
-	m_pClient->reqMktData(1018, ContractSamples::CryptoContract(), "", false, false, TagValueListSPtr());
-	//! [reqmktdatacrypto]
-
-	//! [IPOPrice]
-	m_pClient->reqMktData(1019, ContractSamples::StockWithIPOPrice(), "mdoff,586", false, false, TagValueListSPtr());
-	//! [IPOPrice]
+	m_pClient->reqMktData(1001, ContractSamples::HKStk(), "", false, false, TagValueListSPtr());
+//	m_pClient->reqMktData(1002, ContractSamples::OptionWithLocalSymbol(), "", false, false, TagValueListSPtr());
+//	//! [reqmktdata]
+//	//! [reqmktdata_snapshot]
+//	m_pClient->reqMktData(1003, ContractSamples::FutureComboContract(), "", true, false, TagValueListSPtr());
+//	//! [reqmktdata_snapshot]
+//
+//	/*
+//	//! [regulatorysnapshot]
+//	// Each regulatory snapshot incurs a fee of 0.01 USD
+//	m_pClient->reqMktData(1013, ContractSamples::USStock(), "", false, true, TagValueListSPtr());
+//	//! [regulatorysnapshot]
+//	*/
+//
+//	//! [reqmktdata_genticks]
+//	//Requesting RTVolume (Time & Sales) and shortable generic ticks
+//	m_pClient->reqMktData(1004, ContractSamples::USStockAtSmart(), "233,236", false, false, TagValueListSPtr());
+//	//! [reqmktdata_genticks]
+//
+//	//! [reqmktdata_contractnews]
+//	// Without the API news subscription this will generate an "invalid tick type" error
+//	m_pClient->reqMktData(1005, ContractSamples::USStock(), "mdoff,292:BZ", false, false, TagValueListSPtr());
+//	m_pClient->reqMktData(1006, ContractSamples::USStock(), "mdoff,292:BT", false, false, TagValueListSPtr());
+//	m_pClient->reqMktData(1007, ContractSamples::USStock(), "mdoff,292:FLY", false, false, TagValueListSPtr());
+//	m_pClient->reqMktData(1008, ContractSamples::USStock(), "mdoff,292:DJ-RT", false, false, TagValueListSPtr());
+//	//! [reqmktdata_contractnews]
+//	//! [reqmktdata_broadtapenews]
+//	m_pClient->reqMktData(1009, ContractSamples::BTbroadtapeNewsFeed(), "mdoff,292", false, false, TagValueListSPtr());
+//	m_pClient->reqMktData(1010, ContractSamples::BZbroadtapeNewsFeed(), "mdoff,292", false, false, TagValueListSPtr());
+//	m_pClient->reqMktData(1011, ContractSamples::FLYbroadtapeNewsFeed(), "mdoff,292", false, false, TagValueListSPtr());
+//	//! [reqmktdata_broadtapenews]
+//
+//	//! [reqoptiondatagenticks]
+//	//Requesting data for an option contract will return the greek values
+//	m_pClient->reqMktData(1013, ContractSamples::USOptionContract(), "", false, false, TagValueListSPtr());
+//	//! [reqoptiondatagenticks]
+//
+//	//! [reqfuturesopeninterest]
+//	//Requesting data for a futures contract will return the futures open interest
+//	m_pClient->reqMktData(1014, ContractSamples::SimpleFuture(), "mdoff,588", false, false, TagValueListSPtr());
+//	//! [reqfuturesopeninterest]
+//
+//	//! [reqpreopenbidask]
+//	//Requesting data for a futures contract will return the pre-open bid/ask flag
+//	m_pClient->reqMktData(1015, ContractSamples::SimpleFuture(), "", false, false, TagValueListSPtr());
+//	//! [reqpreopenbidask]
+//
+//	//! [reqavgoptvolume]
+//	//Requesting data for a stock will return the average option volume
+//	m_pClient->reqMktData(1016, ContractSamples::USStockAtSmart(), "mdoff,105", false, false, TagValueListSPtr());
+//	//! [reqavgoptvolume]
+//
+//	//! [reqetfticks]
+//	//Requesting data for an ETF will return the ETF ticks
+//	m_pClient->reqMktData(1017, ContractSamples::etf(), "mdoff,576,577,578,614,623", false, false, TagValueListSPtr());
+//	//! [reqetfticks]
+//
+//	//! [reqmktdatacrypto]
+//	m_pClient->reqMktData(1018, ContractSamples::CryptoContract(), "", false, false, TagValueListSPtr());
+//	//! [reqmktdatacrypto]
+//
+//	//! [IPOPrice]
+//	m_pClient->reqMktData(1019, ContractSamples::StockWithIPOPrice(), "mdoff,586", false, false, TagValueListSPtr());
+//	//! [IPOPrice]
 
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 	/*** Canceling the market data subscription ***/
 	//! [cancelmktdata]
-	m_pClient->cancelMktData(1001);
-	m_pClient->cancelMktData(1002);
-	m_pClient->cancelMktData(1003);
-	m_pClient->cancelMktData(1014);
-	m_pClient->cancelMktData(1015);
-	m_pClient->cancelMktData(1016);
-	m_pClient->cancelMktData(1017);
-	m_pClient->cancelMktData(1018);
-	m_pClient->cancelMktData(1019);
+//	m_pClient->cancelMktData(1001);
+//	m_pClient->cancelMktData(1002);
+//	m_pClient->cancelMktData(1003);
+//	m_pClient->cancelMktData(1014);
+//	m_pClient->cancelMktData(1015);
+//	m_pClient->cancelMktData(1016);
+//	m_pClient->cancelMktData(1017);
+//	m_pClient->cancelMktData(1018);
+//	m_pClient->cancelMktData(1019);
 	//! [cancelmktdata]
 
 	m_state = ST_TICKDATAOPERATION_ACK;
@@ -500,8 +500,8 @@ void TestCppClient::delayedTickDataOperation()
 
 	//! [reqmktdata_delayedmd]
 	m_pClient->reqMarketDataType(4); // send delayed-frozen (4) market data type
-	m_pClient->reqMktData(1013, ContractSamples::HKStk(), "", false, false, TagValueListSPtr());
-	m_pClient->reqMktData(1014, ContractSamples::USOptionContract(), "", false, false, TagValueListSPtr());
+    m_pClient->reqMktData(1013, ContractSamples::HKStk(), "", false, false, TagValueListSPtr());
+//	m_pClient->reqMktData(1014, ContractSamples::USOptionContract(), "", false, false, TagValueListSPtr());
 	//! [reqmktdata_delayedmd]
 
 	std::this_thread::sleep_for(std::chrono::seconds(10));
@@ -509,7 +509,7 @@ void TestCppClient::delayedTickDataOperation()
 	/*** Canceling the delayed market data subscription ***/
 	//! [cancelmktdata_delayedmd]
 	m_pClient->cancelMktData(1013);
-	m_pClient->cancelMktData(1014);
+//	m_pClient->cancelMktData(1014);
 	//! [cancelmktdata_delayedmd]
 
 	m_state = ST_DELAYEDTICKDATAOPERATION_ACK;
@@ -1467,19 +1467,19 @@ void TestCppClient::nextValidId( OrderId orderId)
 	//! [nextvalidid]
 
     //m_state = ST_TICKOPTIONCOMPUTATIONOPERATION; 
-    //m_state = ST_TICKDATAOPERATION; 
+    m_state = ST_TICKDATAOPERATION;
     //m_state = ST_OPTIONSOPERATIONS;
     //m_state = ST_REQTICKBYTICKDATA; 
     //m_state = ST_REQHISTORICALTICKS; 
     //m_state = ST_CONTFUT; 
     //m_state = ST_PNLSINGLE; 
     //m_state = ST_PNL; 
-	//m_state = ST_DELAYEDTICKDATAOPERATION; 
+	//m_state = ST_DELAYEDTICKDATAOPERATION;
 	//m_state = ST_MARKETDEPTHOPERATION;
 	//m_state = ST_REALTIMEBARS;
 	//m_state = ST_MARKETDATATYPE;
 	//m_state = ST_HISTORICALDATAREQUESTS;
-	m_state = ST_CONTRACTOPERATION;
+//	m_state = ST_CONTRACTOPERATION;
 	//m_state = ST_MARKETSCANNERS;
 	//m_state = ST_FUNDAMENTALS;
 	//m_state = ST_BULLETINS;

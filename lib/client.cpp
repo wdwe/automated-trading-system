@@ -174,7 +174,7 @@ void Client::req_historical_tick(int req_id) {
         hist_data_finished = false; // FIXME: can have a race condition with historicalTicksLast
         time_t next_time = std::max(start_time, hist_data_last_date + 1);
         std::cout << next_time << std::endl;
-        char time_str[std::size("yyymmdd-HH:MM:SSz")]; //std::size("yyymmdd-HH:MM:SS")
+        char time_str[std::size("yyyymmdd-HH:MM:SSz")]; //std::size("yyymmdd-HH:MM:SS")
         std::tm * ptm = std::gmtime(&next_time);
         strftime(time_str, std::size(time_str), "%Y%m%d-%H:%M:%S", ptm);
         std::cout << time_str << std::endl;

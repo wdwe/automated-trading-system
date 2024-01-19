@@ -57,4 +57,4 @@ _deps
 ###########
 # exception
 ###########
-!/tws/client/lib/libbid.a
+!/external/tws/client/lib/libbid.a

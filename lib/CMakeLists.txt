@@ -9,11 +9,11 @@ target_link_libraries(cli
 )
 
 target_link_directories(cli
-        PUBLIC ${CMAKE_BINARY_DIR}/tws/client
-        PUBLIC ${CMAKE_BINARY_DIR}/tws/utils
+        PUBLIC ${CMAKE_BINARY_DIR}/external/tws/client
+        PUBLIC ${CMAKE_BINARY_DIR}/external/tws/utils
 )
 
 target_include_directories(cli
-        PUBLIC ${CMAKE_SOURCE_DIR}/tws/client
-        PUBLIC ${CMAKE_SOURCE_DIR}/tws/utils
+        PUBLIC ${CMAKE_SOURCE_DIR}/external/tws/client
+        PUBLIC ${CMAKE_SOURCE_DIR}/external/tws/utils
 )

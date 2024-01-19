@@ -15,10 +15,10 @@ target_link_libraries(tws_client_tester
 )
 
 target_link_directories(tws_client_tester
-        PUBLIC ${CMAKE_BINARY_DIR}/tws/client
+        PUBLIC ${CMAKE_BINARY_DIR}/external/tws/client
 )
 
 target_include_directories(tws_client_tester
-        PUBLIC ${CMAKE_SOURCE_DIR}/tws/client
-        PUBLIC ${CMAKE_SOURCE_DIR}/tests/TestCppClient
+        PUBLIC ${CMAKE_SOURCE_DIR}/external/tws/client
+        PUBLIC ${CMAKE_SOURCE_DIR}/external/tests/TestCppClient
 )
