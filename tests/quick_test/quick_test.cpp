@@ -13,6 +13,8 @@ void check_ctime() {
 //    time_t time = std::time(nullptr);
     char time_str[std::size("yyyymmdd-hh:mm:ss")];
     std::cout << time << std::endl;
+    // std::localtime will convert time back to local time 20240118 06:50:00
+    // std::gmtime will convert time to UTC+0 time
     std::tm *ptm = std::gmtime(&time);
     std::strftime(time_str, std::size(time_str), "%Y%m%d-%H:%M:%S", ptm);
     std::cout << time_str << std::endl;

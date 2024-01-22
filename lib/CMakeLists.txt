@@ -1,6 +1,7 @@
 add_library(cli
         client.cpp
         contracts.cpp
+        historical_data.cpp
 )
 
 target_link_libraries(cli

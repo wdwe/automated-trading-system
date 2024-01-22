@@ -20,5 +20,5 @@ target_include_directories(${PROJECT_NAME}
 
 add_subdirectory(lib)
 add_subdirectory(external)
-#add_subdirectory(external/tws/utils)
+add_subdirectory(data)
 add_subdirectory(tests)

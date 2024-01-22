@@ -10,6 +10,15 @@ Contract TSEJStockContracts::get_sony() {
     return contract;
 }
 
+Contract TSEJStockContracts::get_one() {
+    Contract contract;
+    contract.symbol = "9766";
+    contract.secType = "STK";
+    contract.currency = "JPY";
+    contract.exchange = "TSEJ";
+    return contract;
+}
+
 Contract TSEJStockContracts::get_hsbc() {
     Contract contract;
     contract.symbol = "HSBA";

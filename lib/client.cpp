@@ -125,7 +125,7 @@ void Client::tickByTickAllLast(int reqId, int tickType, time_t time, double pric
                                const std::string &specialConditions) {
     char time_str[std::size("yyyy-mm-ddThh:mm:ssZ")];
 //    std::time_t now = std::time(&time);
-    std::tm * ptm = std::localtime(&time);
+    std::tm * ptm = std::gmtime(&time);
     std::strftime(time_str, std::size(time_str), "%FT%TZ", ptm);
     std::cout << "reqId: " << reqId << " tickType: " << tickType << " time: " << time_str << " price: " << price
               << " size: " << decimalStringToDisplay(size) << " exchange: " << exchange.c_str() << std::endl;
@@ -193,7 +193,7 @@ void Client::historicalTicksLast(int reqId, const std::vector<HistoricalTickLast
         if (tick.time > end_time) continue;
         char time_str[std::size("yyyymmdd-hh:mm:ss")];
         auto time = static_cast<std::time_t>(tick.time);
-        auto ptm = std::gmtime(&time);
+        auto ptm = std::localtime(&time);
         std::strftime(time_str, std::size(time_str), "%Y%m%d-%H:%M:%S", ptm);
         file << reqId << ", " << tick.time << ", " << time_str << ", " << tick.price << ", " << decimalStringToDisplay(tick.size) <<
             ", " << tick.exchange << ", " << tick.specialConditions << std::endl;
