@@ -1,6 +1,9 @@
 // testing random c++ syntax, library etc
 #include <iostream>
 #include <ctime>
+#include <chrono>
+#include "date/tz.h"
+#include <sstream>
 
 void check_ctime() {
     char start_time[] = "20240118 06:50:00";
@@ -20,8 +23,25 @@ void check_ctime() {
     std::cout << time_str << std::endl;
 }
 
+void check_time_zone() {
+    auto utc_time = std::chrono::system_clock::now();
+    auto berlin = date::make_zoned("Europe/Berlin", utc_time);
+    auto eastern = date::make_zoned("America/New_York", utc_time);
+    std::chrono::time_point<std::chrono::system_clock, std::chrono::milliseconds> tp;
+    std::istringstream in{"Thu, 9 Jan 2014 12:35:34.032 +0000"};
+    in >> date::parse("%a, %d %b %Y %T %z", tp);
+    std::cout << date::format("%F %T %Z", utc_time) << std::endl;
+    std::cout << date::format("%F %T %Z", berlin) << std::endl;
+    std::cout << date::format("%F %T %Z", eastern) << std::endl;
+    std::cout << date::format("%F %T %Z", tp) << std::endl;
+    auto t = std::chrono::system_clock::from_time_t(1705992493);
+    std::cout << date::format("%F %T %Z", t) << std::endl;
+}
+
 
 int main() {
-    check_ctime();
+//    check_ctime();
+    check_time_zone();
     return 0;
+
 }

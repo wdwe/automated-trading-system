@@ -26,7 +26,7 @@ public:
     void headTimestamp(int reqId, const std::string& headTimestamp) override;
     void req_historical_tick();
     void historicalTicksLast(int reqId, const std::vector<HistoricalTickLast>& ticks, bool done) override;
-    bool is_finished();
+    bool is_finished() const;
 private:
     // members
     EReaderOSSignal m_osSignal;

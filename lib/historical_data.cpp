@@ -93,6 +93,7 @@ void DataClient::req_historical_tick() {
         std::cout << "no more data available" << std::endl;
         finished = true;
     }
+
     if (req_time > end) {
         std::cout << "completed data range" << std::endl;
         finished = true;
@@ -143,7 +144,7 @@ void DataClient::process_messages() {
     m_pReader->processMsgs();
 }
 
-bool DataClient::is_finished() {
+bool DataClient::is_finished() const {
     return finished;
 }
 
